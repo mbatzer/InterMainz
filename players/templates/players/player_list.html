@@ -1,0 +1,86 @@
+{% extends "show/base.html" %}
+{% block content %}
+    <h1>Jugadores</h1>
+
+    <div class="container">
+        <h2>Porteros</h2>
+        <div class="row">
+            {% for player in players%}
+                {% if player.position.lower == 'portero' %}
+                    <a class="players" href="{% url 'player-detail' player.pk %}">
+                        <div class="col-sm align-self-end">
+                            <div class="card mb-3" style="width: 18rem">
+                                <img class="card-img-top" src="{{ player.picture.url }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ player.first_name }} {{ player.last_name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Defensas</h2>
+        <div class="row">
+            {% for player in players%}
+                {% if player.position.lower == 'defensa' %}
+                    <a class="players" href="{% url 'player-detail' player.pk %}">
+                        <div class="col-sm align-self-end">
+                            <div class="card mb-3" style="width: 18rem">
+                                <img class="card-img-top" src="{{ player.picture.url }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ player.first_name }} {{ player.last_name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Centrocampistas</h2>
+        <div class="row">
+            {% for player in players%}
+                {% if player.position.lower == 'centrocampo' %}
+                    <a class="players" href="{% url 'player-detail' player.pk %}">
+                        <div class="col-sm align-self-center">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top" src="{{ player.picture.url }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ player.first_name }} {{ player.last_name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h2>Delanteros</h2>
+        <div class="row">
+            {% for player in players%}
+                {% if player.position.lower == 'delantero' %}
+                    <a class="players" href="{% url 'player-detail' player.pk %}">
+                        <div class="col-sm align-self-end">
+                            <div class="card mb-3" style="width: 18rem">
+                                <img class="card-img-top" src="{{ player.picture.url }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ player.first_name }} {{ player.last_name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

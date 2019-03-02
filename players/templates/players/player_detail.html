@@ -1,0 +1,17 @@
+{% extends "show/base.html" %}
+{% block content %}
+
+<div class="media border p-5">
+    <img class="rounded w-25"  src="{{ player.picture.url }}">
+    <div class="media-body ml-5">
+        <h1 class="card-title border-bottom">{{ player.first_name }} {{ player.last_name }}</h1>
+        <p class="lead"><strong>Posición:</strong> {{ player.position }}</p>
+        {% if player.nationality %}
+        <p class="lead"><strong>Nacionalidad:</strong> {{ player.nationality }}</p>
+        {% endif %}
+        {% if player.jersey_number %}
+            <p class="lead"><strong>Número:</strong> {{ player.jersey_number }}</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
