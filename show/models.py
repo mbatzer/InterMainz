@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class ShowPictures(models.Model):
+class ShowPicture(models.Model):
     # picture = models.ImageField(default=".jpg", upload_to="carousel")
     LEFT = 'lf'
     CENTRE = 'ct'
