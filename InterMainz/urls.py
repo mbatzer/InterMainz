@@ -17,12 +17,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
-from show import views as show_views
+from show.views import ShowListView
 from players.views import PlayerListView, PlayerDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', show_views.home, name='show-home'),
+    path('', ShowListView.as_view(), name='show-home'),
     path('players/', PlayerListView.as_view(), name='players'),
     path('players/<int:pk>/', PlayerDetailView.as_view(), name='player-detail')
 ]
